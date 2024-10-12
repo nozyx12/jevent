@@ -20,9 +20,11 @@ jar {
 tasks.register("generateSourcesJar", Jar) {
     archiveClassifier.set("sources")
     from sourceSets.main.allSource
+    archiveBaseName = archiveBaseName.get().toLowerCase()
 }
 
 tasks.register("generateJavadocJar", Jar) {
     archiveClassifier.set("javadoc")
     from javadoc
+    archiveBaseName = archiveBaseName.get().toLowerCase()
 }
